@@ -31,3 +31,38 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg-section3-img1, .bg-section3-img2, .bg-section3-img3, .bg-section3-img4, .bg-section3-img5{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-section3-img1{
+  background-image: url('../../public/section3/1.jpg');
+}
+
+.bg-section3-img2{
+  background-image: url('../../public/section3/2.jpg');
+}
+
+.bg-section3-img3{
+  background-image: url('../../public/section3/3.jpg');
+}
+
+.bg-section3-img4{
+  background-image: url('../../public/section3/4.jpg');
+}
+
+.bg-section3-img5{
+  background-image: url('../../public/section3/55.jpg');
+}
+
+/* 4th section */
+
+.section4-bg{
+  background-image: url('../../public/shop-de8ddf10.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

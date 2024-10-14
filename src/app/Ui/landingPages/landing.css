@@ -1,0 +1,14 @@
+.bg-image{
+    background-image: url('../../../../public/Untitled_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+.section-bg-5{
+    background-image: url('../../../../public/section-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
