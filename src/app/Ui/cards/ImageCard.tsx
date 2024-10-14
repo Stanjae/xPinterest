@@ -52,7 +52,7 @@ const ImageCard = ({pin, param}:{pin:SinglePinType ;param:any }) => {
             </div>
           </Link>
       </section>
-      <SavedModal pinId={pin?._id} param={param} isOpen={isOpen} onOpenChange={onOpenChange}/>
+      {param && <SavedModal pinId={pin?._id} param={param} isOpen={isOpen} onOpenChange={onOpenChange}/>}
     </div>
   )
 }

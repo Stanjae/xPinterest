@@ -10,6 +10,7 @@ export default async function RootLayout({
   }>) {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
+    
     const createProfile = await createProfileIfNotExists(user);
     return (
       <main>

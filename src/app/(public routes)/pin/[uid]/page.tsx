@@ -16,12 +16,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react'
 import SimilarPinsWrapper from '@/app/Ui/aServerWrappers/SimilarPinsWrapper'
+import { notFound } from 'next/navigation';
 
 const PinPage = async({params}:{params:{uid:string}}) => {
   const response = await getSinglePin(params.uid);
   const {getUser} = getKindeServerSession();
 
   const user = await getUser()
+
+  if(!user){
+    notFound()
+  }
 
   const homePage = `${process.env.KINDE_SITE_URL}`
 
@@ -35,13 +40,13 @@ const PinPage = async({params}:{params:{uid:string}}) => {
         <div className='grow space-y-3 relative pl-3'>
           <div className='flex justify-between items-center'>
             <div className=' flex  items-center gap-2'>
-              <LikeBtn userId={user?.id} pinId={params.uid} />
+              {user && <LikeBtn userId={user?.id} pinId={params.uid} />}
               <ShareBtnModal type='icon' title={response?.name} url={`${homePage}/pin/${params?.uid}`} />
               <CustomMoreButton imageLink={response?.pin_image} />
             </div>
             <div className='flex gap-2 items-center'>
               <Button size='lg' radius='full' variant='light' endContent={<ChevronDownIcon className='h-5 w-5'/>}>{response?.board_type?.name}</Button>
-               <SavedToPinModal param={user?.id} pinId={params.uid} />
+              {user && <SavedToPinModal param={user?.id} pinId={params.uid} />}
             </div>
           </div>
           <div className=" space-y-1 mt-5">
@@ -67,16 +72,16 @@ const PinPage = async({params}:{params:{uid:string}}) => {
               </div>
             
             
-            {response?.creator?._id != user?.id && <FollowBtn size={"md"} authorId={response?.creator?._id} authorName={response?.creator?.username} 
+            {user && response?.creator?._id != user?.id && <FollowBtn size={"md"} authorId={response?.creator?._id} authorName={response?.creator?.username} 
             pinId={params?.uid} userId={user?.id}/>}
           </div>
-          <CommentForm pinId={response?._id} userId={user?.id}/>
+          {user && <CommentForm pinId={response?._id} userId={user?.id}/>}
         </div>
       </div>
       <h2 className='my-10 text-foreground text-center font-bold text-2xl'>You may Like this</h2>
       <div className=" relative mx-auto max-w-7xl">
           <Suspense key={params.uid} fallback={<TextLoading/>}>
-            <SimilarPinsWrapper pinId={params.uid} userId={user?.id}/>
+            {user && <SimilarPinsWrapper pinId={params.uid} userId={user?.id}/>}
           </Suspense>
       </div>
       </section>

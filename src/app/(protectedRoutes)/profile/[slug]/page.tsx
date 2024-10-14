@@ -22,6 +22,10 @@ const ProfilePage = async({params}: {params: {slug: string}}) => {
 
   const user = await getUser()
 
+  if(!user){
+    notFound()
+  }
+
   const paramsi = {slug:params.slug, userid:user?.id}
 
   const profile = await client.fetch(POST_QUERY, paramsi, options)

@@ -51,8 +51,8 @@ const CreatorPage = async({params}: {params: {uid: string}}) => {
             </div>
             <div className='gap-3  flex justify-center items-center'>
                 <ShareBtnModal url={profileUrl} title='Share' type='btn'/>
-                <FollowBtn size={"lg"} authorId={params.uid} authorName={creator?.username} 
-            pinId={params?.uid} userId={user?.id}/>
+                {user && <FollowBtn size={"lg"} authorId={params.uid} authorName={creator?.username} 
+            pinId={params?.uid} userId={user?.id}/>}
             </div>
         </div>
         <div className=" relative mx-auto max-w-7xl">

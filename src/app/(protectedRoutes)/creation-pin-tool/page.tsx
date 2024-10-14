@@ -2,6 +2,7 @@ import { GET_BOARD_QUERY } from '@/app/lib/data';
 import GridLayout from '@/app/Ui/gridLayout/GridLayout'
 import { client } from '@/sanity/client';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { notFound } from 'next/navigation';
 import React from 'react'
 
 const options = { next: { revalidate: 60 } }
@@ -9,6 +10,10 @@ const options = { next: { revalidate: 60 } }
 const CreationPage = async() => {
   const {getUser} = getKindeServerSession();
   const user = await getUser()
+
+  if(!user){
+    notFound()
+  }
 
   const params = { userid:user?.id}
   const boards = await client.fetch(GET_BOARD_QUERY, params, options)

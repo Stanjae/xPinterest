@@ -7,10 +7,11 @@ const {isAuthenticated, getUser} = getKindeServerSession();
 
 
 export const createProfileIfNotExists = async (user:Partial<KindeUser>) => {
+  if(!user) return null;
     const doc = {
         _id: `${user?.id}`,
         _type: 'author',
-        username: user?.email?.split('@')[0],
+        username: user?.email?.split('@')?.at(0),
         firstname:user?.family_name,
         lastname:user?.given_name,
         author_image:user?.picture,
