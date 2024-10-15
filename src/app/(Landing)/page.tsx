@@ -94,8 +94,8 @@ export default async function LandingPage() {
            </section>
 
            {/* 4th section */}
-           <section className=' border-y-2 border-y-[#7FB3F5] min-h-dvh '>
-                <div className=' p-10 flex items-end section4-bg h-3/5'>
+           <section className=' border-y-2 border-y-[#7FB3F5] '>
+                <div className=' p-10 flex items-end section4-bg'>
                     <div className='  w-52 relative'>
                         <Image className=' w-3/4 h-60' src={PromoImg} width={150} height={200} alt="promo-img"/>
                         <Image src={AvatarImg} className={' h-12 w-12 rounded-full absolute top-3/4 -left-5'} alt='avatar'/>
