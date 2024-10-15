@@ -105,14 +105,14 @@ export default async function LandingPage() {
                         </div>
                     </div>
                 </div>
-                <div className=" h-2/5 p-3 bg-slate-100">
+                <div className=" p-10 bg-slate-100">
                     <div className=' max-w-lg md:px-0 px-5 my-7 space-y-4 text-center mx-auto'>
                         <h2 className='text-primary-700 text-3xl font-bold'>Discover Our Unique Offerings</h2>
                         <p className='text-primary-700'>
                             What do you want to try next? Think of something you &apos; re into—like
                             “easy chicken dinner”—and see what you find.
                         </p>
-                        <Button variant='solid' color="primary" radius='full'>Learn More</Button>
+                        <Button as={Link} href='/explore' variant='solid' color="primary" radius='full'>Learn More</Button>
                     </div>
                 </div>
            </section>
