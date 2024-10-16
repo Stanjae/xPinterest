@@ -9,7 +9,7 @@ export const client = createClient({
   projectId: "hav0je78",
   dataset: "production",
   apiVersion: "2024-01-01",
-  useCdn: false,
+  useCdn: true,
   token: process.env.NEXT_PUBLIC_SANITY_SECRET_TOKEN,
 });
 
