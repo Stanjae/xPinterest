@@ -35,7 +35,7 @@ const CommentForm = ({ pinId, userId}:{pinId:string; userId:string}) => {
         onSuccess: async(data, variables, context) => {
             if(data?.status == 200){
                 queryClient.invalidateQueries({ queryKey: ['comments'] })
-                setValue('comment', '')
+                /* setValue('comment', '') */
             }else{
                 toast.error(data?.message) 
             }
