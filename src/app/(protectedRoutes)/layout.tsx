@@ -9,7 +9,9 @@ export default function ProtectedRootLayout({
     return (
       <main>
         <MainNavBar/>
-        {children}
+        <div className=" pt-20">
+          {children}
+        </div>
       </main>
     );
   }
