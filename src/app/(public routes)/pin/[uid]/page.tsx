@@ -34,7 +34,7 @@ const PinPage = async({params}:{params:{uid:string}}) => {
 
   return (
     <section className=' relative overflow-hidden'>
-      <BackButton className={' absolute md:top-24 z-50 top-40 left-20 md:left-10'}/>
+      <BackButton className={' absolute md:top-24 z-50 top-20 left-14 md:left-10'}/>
       <div className=' bg-white dark:bg-background overflow-hidden max-w-5xl gap-2 relative flex flex-col md:flex-row rounded-lg items-start mx-auto p-5 shadow-2xl'>
         <Image src={response?.pin_image} className=" w-full md:w-[450px] h-[450px] object-cover rounded-lg" alt={response?.name || "poly image"} width={450} height={450} />
         <div className='grow space-y-3 relative p-3 md:p-0 md:pl-3'>
