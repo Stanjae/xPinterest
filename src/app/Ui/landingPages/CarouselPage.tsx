@@ -30,7 +30,7 @@ const words = [
 const CarouselPage = () => {
     
   return (
-    <div className=' overflow-hidden min-h-dvh'>
+    <div className=' relative overflow-hidden min-h-dvh'>
         <MainNavBar/>
         <div className=' mt-80 md:mt-20 mb-5 py-5 text-center'>
           <h1 className=' text-3xl md:text-6xl font-bold leading-tight text-center text-foreground'>

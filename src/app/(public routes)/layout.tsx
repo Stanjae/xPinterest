@@ -15,7 +15,9 @@ export default async function RootLayout({
     return (
       <main>
         <MainNavBar/>
+        <div className=" mt-80 md:mt-20">
         {children}
+        </div>
       </main> //   </main>
     );
   }

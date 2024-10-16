@@ -20,7 +20,7 @@ const DefaultPage = () => {
                     </div>
                     <div className=' my-7 text-center text-white text-sm'>
                       <p><Link href={'/auth/login'}>Already a member? Login</Link></p>
-                      <p className='mt-10'>Are you a Business ? <Link href={'/auth/signup'}>Get Started here</Link></p>
+                      {/* <p className='mt-10'>Are you a Business ? <Link href={'/auth/signup'}>Get Started here</Link></p> */}
                       <p className='text-xs mt-6'>By continuing, you agree with XPinterest Terms of Service and acknowledge you &apos; ve 
                         read our Privacy Policy. Notice at Collection</p>
                     </div>
