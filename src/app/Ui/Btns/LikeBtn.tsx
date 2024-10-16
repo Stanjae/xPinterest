@@ -61,7 +61,7 @@ const LikeBtn = ({pinId, userId}:{pinId:string, userId:string}) => {
                         </svg>
                     </div>
             </div>
-            {isPending ? <TextLoading/> : <span>{millify(data)}</span>}
+            {isPending ? <TextLoading/> : data && <span>{millify(data)}</span>}
         </section>
 
   )
