@@ -33,12 +33,12 @@ const PinPage = async({params}:{params:{uid:string}}) => {
   const topics = response?.topics?.split(',')
 
   return (
-    <section className=' relative'>
+    <section className=' relative overflow-hidden'>
       <BackButton className={' absolute top-24 left-10'}/>
-      <div className=' bg-white dark:bg-background max-w-5xl gap-2 relative flex flex-col md:flex-row rounded-lg items-start mx-auto p-5 shadow-2xl'>
+      <div className=' bg-white dark:bg-background overflow-hidden max-w-5xl gap-2 relative flex flex-col md:flex-row rounded-lg items-start mx-auto p-5 shadow-2xl'>
         <Image src={response?.pin_image} className=" w-full md:w-[450px] h-[450px] object-cover rounded-lg" alt={response?.name || "poly image"} width={450} height={450} />
         <div className='grow space-y-3 relative p-3 md:p-0 md:pl-3'>
-          <div className='flex justify-between items-center'>
+          <div className='flex flex-wrap md:flex-nowrap justify-normal gap-4 md:gap-2 md:justify-between items-center'>
             <div className=' flex  items-center gap-2'>
               {user && <LikeBtn userId={user?.id} pinId={params.uid} />}
               <ShareBtnModal type='icon' title={response?.name} url={`${homePage}/pin/${params?.uid}`} />
