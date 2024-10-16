@@ -79,7 +79,7 @@ const PinPage = async({params}:{params:{uid:string}}) => {
         </div>
       </div>
       <h2 className='my-20 text-foreground text-center font-bold text-2xl'>You may Like this</h2>
-      <div className=" relative mx-auto max-w-7xl">
+      <div className=" relative px-5 md:px-1 mx-auto max-w-7xl">
           <Suspense key={params.uid} fallback={<TextLoading/>}>
             {user && <SimilarPinsWrapper pinId={params.uid} userId={user?.id}/>}
           </Suspense>
