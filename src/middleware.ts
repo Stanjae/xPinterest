@@ -15,5 +15,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: ["/creation-pin-tool"]
+  matcher: ["/creation-pin-tool", "/profile/*"]
 };
